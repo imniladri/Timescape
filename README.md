@@ -20,7 +20,7 @@
 
 ### Key Features of App:
 
--   **Bonus: It has APP Version [Download](https://github.com/imniladri/Timescape/blob/main/app_timescape.apk) for Awesome Experience.**
+-   **Released: APP Version [Download](https://github.com/imniladri/Timescape/releases/tag/app) for Awesome Experience.**
 
 -   **More Features Coming Soon!**
 
