@@ -1,0 +1,33 @@
+<svg id="Clock_Logo" data-name="Clock Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384.34 384.34">
+    <title>Clock Face</title>
+
+    <style>
+        g.square_bars {
+            transform: translate(0,0) rotate(0deg);
+        }
+        g.diagonal_bars {
+            transform: translate(50%,-20%) rotate(45deg);
+        }
+    </style>
+
+    <g id="Clock_Face" data-name="Clock Face">
+        <!-- <circle fill="none" stroke="#dddddd" stroke-width="10" cx="192" cy="192" r="178" /> -->
+
+        <g class="square_bars">
+            <!-- Square Clockwise -->
+            <rect fill="#9ba4b4" x="30" y="190" width="25" height="2" rx="1.2" /> <!--Left Bar-->
+            <rect fill="#9ba4b4" x="192" y="30" width="2" height="25" rx="1.2" /> <!--Top Bar-->
+            <rect fill="#9ba4b4" x="330" y="190" width="25" height="2" rx="1.2" /> <!--Right Bar-->
+            <rect fill="#9ba4b4" x="192" y="330" width="2" height="25" rx="1.2" /> <!--Bottom Bar-->
+        </g>
+
+
+        <g class="diagonal_bars">
+            <!-- Diagonally Clockwise -->
+            <rect fill="#9ba4b4" x="30" y="190" width="25" height="2" rx="1.2" /> <!--TopLeft Bar-->
+            <rect fill="#9ba4b4" x="192" y="30" width="2" height="25" rx="1.2" /> <!--TopRight Bar-->
+            <rect fill="#9ba4b4" x="330" y="190" width="25" height="2" rx="1.2" /> <!--BottomRight Bar-->
+            <rect fill="#9ba4b4" x="192" y="330" width="2" height="25" rx="1.2" /> <!--BottomLeft Bar-->
+        </g>
+    </g>
+</svg>
