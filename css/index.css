@@ -1,0 +1,431 @@
+/* Styles of Clock App */
+/* Created By Niladri Mondal */
+
+/*===================================== Fonts =======================================*/
+
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+/* Fonts Family & Weight Code */
+/*
+    1. Poppins: (400, 500, 600, 700) [font-family: 'Poppins', sans-serif;]
+    2. Quicksand: (500, 600, 700) [font-family: 'Quicksand', sans-serif;]
+    3. Lato: (300, 400, 700, 900) [font-family: 'Lato', sans-serif;]
+*/
+
+/*======================================= General ========================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--darkmode) url(../img/dot_bg.png);
+}
+
+/*===================================== Variables =======================================*/
+
+:root {
+    --darkblack: #222831;
+    --lightblack: #495464;
+    --darkmode: #1a1a30;
+    --darkmodebg: #1b1b2f;
+    --darkmodelg: #2a284f;
+
+    --darkwhite: #ffffff;
+    --mediumwhite: #fafafa;
+    --lightwhite: #f9fcfb;
+    --lightgrey: #9ba4b4;
+
+    --lightred: #fd0054;
+    --lightgreen: #32e0c4;
+    --lightorange: #ffba00;
+
+    --lightblue: #1089ff;
+    --offblue: #14cfff;
+    --greyblue: #171f3a;
+}
+
+/*====================================== Android =======================================*/
+
+@font-face {
+    font-family: "Android";
+    src: url("../fonts/Android.ttf");
+}
+
+/*====================================== Settings =======================================*/
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: var(--lightgrey);
+}
+
+::selection {
+    color: var(--lightwhite);
+    background: var(--lightblue);
+}
+
+img,
+.noselect {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+
+/*==================================== App Loader =====================================*/
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--darkmodebg);
+    z-index: 9999;
+    transition: all 0.6s ease;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loader object {
+    margin: 2px auto;
+    width: 100px;
+    height: auto;
+    opacity: 0;
+    transform: translateY(60%);
+    transition: all 0.3s ease;
+}
+
+.loader h2 {
+    margin: 2px auto;
+    opacity: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--lightwhite);
+    font-family: "Quicksand", sans-serif;
+    transform: translateY(60%);
+    transition: all 0.3s ease;
+}
+
+/*==================================== Loader Clock Svg =====================================*/
+
+svg#clock {
+    fill: none;
+    stroke: var(--lightgrey);
+    stroke-width: 8;
+    animation: fill 1s ease forwards 4s;
+}
+
+@keyframes fill {
+    0% {
+        fill: transparent;
+        stroke: var(--lightgrey);
+    }
+    100% {
+        fill: var(--lightwhite);
+        stroke: transparent;
+    }
+}
+
+svg#clock path:nth-child(1) {
+    stroke-dasharray: 3028;
+    stroke-dashoffset: 3028;
+    animation: line 8s ease forwards;
+}
+svg#clock path:nth-child(2) {
+    stroke-dasharray: 2274;
+    stroke-dashoffset: 2274;
+    animation: line 6s ease forwards;
+}
+svg#clock path:nth-child(3) {
+    stroke-dasharray: 724;
+    stroke-dashoffset: 724;
+    animation: line 6s ease forwards;
+}
+svg#clock path:nth-child(4) {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: line 4s ease forwards;
+}
+svg#clock path:nth-child(5) {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: line 4s ease forwards;
+}
+svg#clock path:nth-child(6) {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: line 4s ease forwards;
+}
+svg#clock path:nth-child(7) {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: line 4s ease forwards;
+}
+
+@keyframes line {
+    0% {
+        stroke-dasharray: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/*==================================== App Styles =====================================*/
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*==================================== Header AppBar Styles =====================================*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* App Logo */
+header nav span.app_logo i {
+    padding: 10px;
+    font-size: 1.5rem;
+    color: var(--lightwhite);
+}
+
+/* App Name */
+header nav span.app_name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    color: var(--lightwhite);
+    letter-spacing: 0.8px;
+    text-align: center;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+/* App Battery */
+header nav span.app_battery {
+    position: relative;
+    width: 40px;
+    height: 15px;
+    border-radius: 10px;
+    background: transparent;
+    border: 2.2px solid var(--lightgrey);
+}
+
+/* Battery Level */
+header nav span.app_battery span.level {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--lightgrey);
+    border-radius: 10px;
+}
+
+/* Battery Charge */
+header nav span.app_battery i.charge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.6rem;
+    color: var(--lightwhite);
+    opacity: 0;
+}
+
+/*==================================== Footer AppBar Styles =====================================*/
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+footer i {
+    position: relative;
+    margin: auto 2px;
+    padding: 10px;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    color: var(--lightgrey);
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+footer i:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 50%;
+    height: 3px;
+    background: var(--offblue);
+    border-radius: 5px;
+    transform: translate(-50%, 0) scale(0, 1);
+    transform-origin: 50% 50%;
+    transition: transform 0.2s ease;
+}
+
+footer i.active {
+    color: var(--offblue);
+    background: rgba(255, 255, 255, 0.2);
+}
+footer i.active:after {
+    transform: translate(-50%, 0) scale(1, 1);
+}
+
+/*==================================== App Home Styles =====================================*/
+
+section.app_home {
+    position: relative;
+}
+
+section.app_home div.app_home {
+    margin: auto 20px;
+}
+
+div.app_home p.message {
+    margin: auto;
+    padding: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: "Quicksand", sans-serif;
+    color: var(--offblue);
+    text-align: left;
+}
+
+div.app_home h6 {
+    margin: auto;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: "Quicksand", sans-serif;
+    color: var(--lightgrey);
+    text-align: left;
+}
+
+div.app_home h4 {
+    position: relative;
+    margin: auto;
+    padding: 10px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+    color: var(--lightwhite);
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+div.app_home h4::after {
+    content: "";
+    position: absolute;
+    top: 81%;
+    left: 5%;
+    width: 43%;
+    height: 5px;
+    border-radius: 5px;
+    background: #f7ea00;
+}
+
+div.app_home p {
+    margin: auto;
+    padding: 10px;
+    font-size: 1.08rem;
+    font-weight: 700;
+    font-family: "Quicksand", sans-serif;
+    color: var(--lightgrey);
+    text-align: justify;
+    text-align-last: left;
+    line-height: 26px;
+}
+
+div.app_home p span {
+    color: #f7ea00;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+div.app_home h5 {
+    margin: 20px auto 0;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: "Quicksand", sans-serif;
+    color: var(--lightgrey);
+    text-align: left;
+}
+
+div.app_home h5 span {
+    display: inline-block;
+    font-size: 1rem;
+    margin: 5px 0;
+    padding: 4px 10px;
+    color: var(--lightgrey);
+    background: rgba(255, 255, 255, 0.2);
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+/*==================================== App Applications Styles =====================================*/
+
+section.app_clock,
+section.app_stopwatch,
+section.app_timer {
+    position: relative;
+}
+
+section.app_clock div.app_clock,
+section.app_stopwatch div.app_stopwatch,
+section.app_timer div.app_timer {
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/*==================================== App Styles End =====================================*/

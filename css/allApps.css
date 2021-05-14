@@ -1,0 +1,239 @@
+/*==================================== App Clock Style =====================================*/
+
+/* Clock */
+div.app_clock .clock {
+    position: relative;
+    margin: 20px auto;
+    width: 230px;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--darkmode) url(../img/face.svg) no-repeat center / cover;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 2px solid var(--darkmode);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.1),
+        2px 8px 10px rgba(0, 0, 0, 0.4), inset 0 0 6px rgba(255, 255, 255, 0.1),
+        inset 2px 8px 10px rgba(0, 0, 0, 0.4);
+}
+
+div.app_clock .clock:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--darkmode);
+    border: 2px solid var(--lightwhite);
+    z-index: 10;
+    border-radius: 50%;
+}
+
+/* Classes: [.hour, .minute, .second] */
+div.app_clock .clock div {
+    position: absolute;
+}
+
+/* Classes: [.hr, .min, .sec] */
+div.app_clock .clock div span {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Classes: [.hour, .hr] */
+div.app_clock .clock div.hour,
+div.app_clock .clock span.hr {
+    width: 130px;
+    height: 130px;
+}
+/* Classes: [.minute, .min] */
+div.app_clock .clock div.minute,
+div.app_clock .clock span.min {
+    width: 150px;
+    height: 150px;
+}
+/* Classes: [.second, .sec] */
+div.app_clock .clock div.second,
+div.app_clock .clock span.sec {
+    width: 170px;
+    height: 170px;
+}
+
+/* Pseudo Class: [Hour, Minute, Second] Hands */
+div.app_clock .clock span.hr:before {
+    content: "";
+    position: absolute;
+    width: 1.6px;
+    height: calc(150px / 2);
+    background: var(--darkwhite);
+    z-index: 1;
+    border-radius: 2px 2px 0 0;
+}
+
+div.app_clock .clock span.min:before {
+    content: "";
+    position: absolute;
+    width: 1.6px;
+    height: calc(170px / 2);
+    background: var(--darkwhite);
+    z-index: 2;
+    border-radius: 2px 2px 0 0;
+}
+
+div.app_clock .clock span.sec:before {
+    content: "";
+    position: absolute;
+    width: 1.4px;
+    height: calc(200px / 2);
+    background: var(--lightred);
+    z-index: 3;
+    border-radius: 2px 2px 0 0;
+}
+
+/* Day / Night */
+div.app_clock .clock i.night,
+div.app_clock .clock i.day {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    padding: 8px;
+    font-size: 1.2rem;
+    color: var(--lightgrey);
+    background: var(--darkmode);
+    box-shadow: inset 0 -1px 2px rgba(255, 255, 255, 0.1),
+        inset 0 2px 6px rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+/*==================================== App Time/Date Style =====================================*/
+
+/* Time/Date */
+div.app_clock .time_date {
+    position: relative;
+    margin: 10px auto;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Time */
+div.app_clock .time_date h4#time {
+    margin: 5px auto;
+    font-size: 3.2rem;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+    color: var(--lightwhite);
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 40px;
+}
+
+/* Date */
+div.app_clock .time_date h4#date {
+    margin: 5px auto;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: "Quicksand", sans-serif;
+    color: var(--lightgrey);
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 40px;
+}
+
+/*==================================== App Stopwatch Style =====================================*/
+
+/* Stopwatch Display */
+div.app_stopwatch .display_stopwatch {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div.app_stopwatch .display_stopwatch h4 {
+    margin: 5px auto;
+    font-size: 3.2rem;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+    color: var(--lightwhite);
+    text-align: center;
+    letter-spacing: 1px;
+}
+div.app_stopwatch .display_stopwatch span {
+    margin: 5px auto;
+    font-size: 2.8rem;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+    color: var(--lightgrey);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Stopwatch Controls */
+div.app_stopwatch .controls_stopwatch {
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.app_stopwatch .controls_stopwatch span i {
+    margin: 15px;
+    padding: 10px;
+    font-size: 2.2rem;
+    color: var(--offblue);
+    background: var(--darkmodelg);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    /* transition: all 0.1s ease; */
+}
+
+div.app_stopwatch .controls_stopwatch span i:active {
+    color: var(--lightwhite);
+    background: var(--lightblue);
+    border: 1px solid rgba(62, 101, 255, 0.8);
+}
+
+/*==================================== App Timer Style =====================================*/
+
+/* Timer Under Development Components */
+div.app_timer img {
+    margin: auto;
+    width: 64px;
+    height: 64px;
+}
+
+div.app_timer h4 {
+    margin: auto;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    color: var(--lightwhite);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+div.app_timer p {
+    margin: auto;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: "Quicksand", sans-serif;
+    color: var(--lightgrey);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/*==================================== All App Styles End =====================================*/
