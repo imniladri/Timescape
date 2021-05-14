@@ -6,7 +6,7 @@
 
 ## [Clock App UI](https://imniladri.github.io/Timescape/)
 
-<br/>
+<hr/>
 
 ### Description:
 
